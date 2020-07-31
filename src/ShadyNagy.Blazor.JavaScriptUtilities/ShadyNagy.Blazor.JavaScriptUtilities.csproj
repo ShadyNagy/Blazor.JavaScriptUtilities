@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <PackageId>ShadyNagy.Blazor.JavaScriptUtilities</PackageId>
+    <Title>ShadyNagy.Blazor.JavaScriptUtilities</Title>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Shady Nagy</Authors>
+    <Company>ShadyNagy.com</Company>
+    <PackageProjectUrl>https://github.com/ShadyNagy/Blazor.JavaScriptUtilities</PackageProjectUrl>
+    <Description>Blazor JavaScript Utilities.</Description>
+    <Summary>Blazor JavaScript Utilities.</Summary>
+    <RepositoryUrl>https://github.com/ShadyNagy/Blazor.JavaScriptUtilities</RepositoryUrl>
+    <PackageTags>Blazor,JavaScript,Utilities</PackageTags>
+    <PackageIcon>icon.png</PackageIcon>
+    <Version>1.0.0</Version>
+    <PackageReleaseNotes>Start of the project</PackageReleaseNotes>
+    <AssemblyName>ShadyNagy.Blazor.JavaScriptUtilities</AssemblyName>
+    <Features>strict</Features>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Copyright>Copyright 2019 - 2020 (c) Shady Nagy. All rights reserved.</Copyright>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components" Version="3.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="3.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- .js/.css files will be referenced via <script>/<link> tags; other content files will just be included in the app's 'dist' directory without any tags referencing them -->
+    <EmbeddedResource Include="content\**\*.js" LogicalName="blazor:js:%(RecursiveDir)%(Filename)%(Extension)" />
+    <EmbeddedResource Include="content\**\*.css" LogicalName="blazor:css:%(RecursiveDir)%(Filename)%(Extension)" />
+    <EmbeddedResource Include="content\**" Exclude="**\*.js;**\*.css" LogicalName="blazor:file:%(RecursiveDir)%(Filename)%(Extension)" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon.png" Pack="true" Visible="false" PackagePath="" />
+  </ItemGroup>
+
+</Project>
