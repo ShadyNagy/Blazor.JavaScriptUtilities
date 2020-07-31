@@ -14,7 +14,7 @@
     <RepositoryUrl>https://github.com/ShadyNagy/Blazor.JavaScriptUtilities</RepositoryUrl>
     <PackageTags>Blazor,JavaScript,Utilities</PackageTags>
     <PackageIcon>icon.png</PackageIcon>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <PackageReleaseNotes>Start of the project</PackageReleaseNotes>
     <AssemblyName>ShadyNagy.Blazor.JavaScriptUtilities</AssemblyName>
     <Features>strict</Features>

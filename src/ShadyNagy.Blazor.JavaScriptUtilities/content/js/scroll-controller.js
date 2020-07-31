@@ -1,4 +1,4 @@
-﻿window.hideTagScrollOverflowByTag = (tagName) => {
+﻿window.hideScrollOverflowByTag = (tagName) => {
     if (className === undefined) {
         document.body.classList.add("blazor-javascript-no-overflow");
     } else {
@@ -11,7 +11,7 @@
     }
 };
 
-window.showTagScrollOverflowByTag = (tagName) => {
+window.showScrollOverflowByTag = (tagName) => {
     if (className === undefined) {
         document.body.classList.remove("blazor-javascript-no-overflow");
     } else {
