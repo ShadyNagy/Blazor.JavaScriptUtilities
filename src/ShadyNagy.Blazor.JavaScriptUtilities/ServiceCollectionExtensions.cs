@@ -11,6 +11,7 @@ namespace ShadyNagy.Blazor.JavaScriptUtilities
             return services.AddScoped<ISyncBlazorCookie, BlazorCookie>();
         }
 
+
         public static IServiceCollection AddBlazorScrollController(this IServiceCollection services)
         {
             services.AddScoped<IBlazorScrollController, BlazorScrollController>();
