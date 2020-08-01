@@ -1,0 +1,17 @@
+﻿@page "/local-storage"
+
+@inject IBlazorLocalStorage BlazorLocalStorage
+
+<button class="btn btn-danger" @onclick="IsLocalStorageAvailable">Check Local Storage Available</button>
+
+Is Local Storage Avaliable: @IsAvailable
+
+@code
+{
+    private bool IsAvailable { get; set; }
+
+    private async Task IsLocalStorageAvailable()
+    {
+        IsAvailable = await BlazorLocalStorage.IsAvailableAsync();
+    }
+}

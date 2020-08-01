@@ -7,6 +7,7 @@ namespace ShadyNagy.Blazor.JavaScriptUtilities
     {
         public static IServiceCollection AddAllBlazorJavaScriptUtilities(this IServiceCollection services)
         {
+            services.AddBlazorLocalStorage();
             services.AddBlazorCookie();
             return services.AddBlazorScrollController();
         }
@@ -21,6 +22,12 @@ namespace ShadyNagy.Blazor.JavaScriptUtilities
         {
             services.AddScoped<IBlazorScrollController, BlazorScrollController>();
             return services.AddScoped<ISyncBlazorScrollController, BlazorScrollController>();
+        }
+
+        public static IServiceCollection AddBlazorLocalStorage(this IServiceCollection services)
+        {
+            services.AddScoped<IBlazorLocalStorage, BlazorLocalStorage>();
+            return services.AddScoped<ISyncBlazorLocalStorage, BlazorLocalStorage>();
         }
     }
 }
