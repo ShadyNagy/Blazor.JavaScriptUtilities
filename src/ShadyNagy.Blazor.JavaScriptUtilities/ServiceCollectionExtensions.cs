@@ -5,6 +5,12 @@ namespace ShadyNagy.Blazor.JavaScriptUtilities
 {
     public static class ServiceCollectionExtensions
     {
+        public static IServiceCollection AddAllBlazorJavaScriptUtilities(this IServiceCollection services)
+        {
+            services.AddBlazorCookie();
+            return services.AddBlazorScrollController();
+        }
+
         public static IServiceCollection AddBlazorCookie(this IServiceCollection services)
         {
             services.AddScoped<IBlazorCookie, BlazorCookie>();
