@@ -89,6 +89,8 @@ Add the following to your *_Imports.razor*
 @using ShadyNagy.Blazor.JavaScriptUtilities.Services
 ```
 
+### 4. Examples
+
 To hide both scrolls
 ```csharp
 await BlazorScrollController.HideBodyScrollOverflowAsync(ScrollType.Both);
