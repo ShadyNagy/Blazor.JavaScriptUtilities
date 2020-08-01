@@ -6,6 +6,12 @@
     ]
   },
   {
+    "outputFileName": "wwwroot/blazor-javascript-utilities.js",
+    "inputFiles": [
+      "Content/js/blazor-javascript-utilities.js"
+    ]
+  },
+  {
     "outputFileName": "wwwroot/scroll-controller.js",
     "inputFiles": [
       "Content/js/scroll-controller.js"
