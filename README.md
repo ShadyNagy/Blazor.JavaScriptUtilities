@@ -17,7 +17,7 @@
 </p>
 
 # Blazor.JavaScriptUtilities
-Utilities by JavaScript for Blazor (Scroll Hide, Scroll Show, Cookie Read, Cookie Delete, ......).
+Utilities by JavaScript for Blazor (Scroll Hide, Scroll Show, Cookie Read, Cookie Delete, ...... and more comming).
 
 ## Give a Star! :star:
 If you like or are using this project please give it a star. Thanks!
