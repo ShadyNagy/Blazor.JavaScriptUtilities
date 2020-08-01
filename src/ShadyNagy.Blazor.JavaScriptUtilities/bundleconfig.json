@@ -1,26 +1,41 @@
 ﻿[
   {
-    "outputFileName": "wwwroot/blazor-javascript-utilities.css",
+    "outputFileName": "wwwroot/blazor-javascript-utilities.min.css",
     "inputFiles": [
       "Content/css/blazor-javascript-utilities.css"
     ]
   },
   {
-    "outputFileName": "wwwroot/blazor-javascript-utilities.js",
+    "outputFileName": "wwwroot/blazor-javascript-utilities.min.js",
     "inputFiles": [
       "Content/js/blazor-javascript-utilities.js"
-    ]
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
   },
   {
-    "outputFileName": "wwwroot/scroll-controller.js",
+    "outputFileName": "wwwroot/scroll-controller.min.js",
     "inputFiles": [
       "Content/js/scroll-controller.js"
-    ]
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
   },
   {
-    "outputFileName": "wwwroot/cookie.js",
+    "outputFileName": "wwwroot/cookie.min.js",
     "inputFiles": [
       "Content/js/cookie.js"
-    ]
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
   }
 ]
