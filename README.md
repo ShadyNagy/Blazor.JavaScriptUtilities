@@ -91,7 +91,7 @@ Add the following to your *_Imports.razor*
 @using ShadyNagy.Blazor.JavaScriptUtilities.Constants
 ```
 
-### 4. Inject
+### 4. Add Injects
 
 ```razor
 @inject IBlazorScrollController BlazorScrollController
