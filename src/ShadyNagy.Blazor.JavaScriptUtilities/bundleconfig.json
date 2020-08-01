@@ -1,8 +1,20 @@
 ﻿[
   {
-    "outputFileName": "wwwroot/css/blazor-javascript-utilities.scss",
+    "outputFileName": "wwwroot/blazor-javascript-utilities.css",
     "inputFiles": [
-      "wwwroot/css/blazor-javascript-utilities.scss"
+      "Content/css/blazor-javascript-utilities.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/scroll-controller.js",
+    "inputFiles": [
+      "Content/js/scroll-controller.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/cookie.js",
+    "inputFiles": [
+      "Content/js/cookie.js"
     ]
   }
 ]

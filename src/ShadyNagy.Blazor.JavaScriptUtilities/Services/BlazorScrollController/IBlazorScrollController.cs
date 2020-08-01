@@ -6,5 +6,7 @@ namespace ShadyNagy.Blazor.JavaScriptUtilities.Services
     {
         Task HideScrollOverflowByTagAsync(string tagName);
         Task ShowScrollOverflowByTagAsync(string tagName);
+        Task HideScrollOverflowByClassAsync(string className);
+        Task ShowScrollOverflowByClassAsync(string className);
     }
 }

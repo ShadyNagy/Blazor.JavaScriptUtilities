@@ -4,5 +4,7 @@
     {
         void HideScrollOverflowByTag(string tagName);
         void ShowScrollOverflowByTag(string tagName);
+        void HideScrollOverflowByClass(string className);
+        void ShowScrollOverflowByClass(string className);
     }
 }

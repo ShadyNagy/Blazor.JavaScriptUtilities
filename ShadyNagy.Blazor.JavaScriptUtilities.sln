@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShadyNagy.Blazor.JavaScript
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{FAF3A918-074A-48D5-A6A2-95C440D409EF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blazor-sample", "samples\blazor-sample\blazor-sample.csproj", "{D253EAD2-9298-4B98-AADB-7BEC214E4605}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,12 +21,17 @@ Global
 		{8FF96DC4-8C4D-4A65-B78F-4DE709DAC0A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FF96DC4-8C4D-4A65-B78F-4DE709DAC0A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FF96DC4-8C4D-4A65-B78F-4DE709DAC0A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D253EAD2-9298-4B98-AADB-7BEC214E4605}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D253EAD2-9298-4B98-AADB-7BEC214E4605}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D253EAD2-9298-4B98-AADB-7BEC214E4605}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D253EAD2-9298-4B98-AADB-7BEC214E4605}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{8FF96DC4-8C4D-4A65-B78F-4DE709DAC0A3} = {1336480E-183A-4D61-8BE2-A919A18022D0}
+		{D253EAD2-9298-4B98-AADB-7BEC214E4605} = {FAF3A918-074A-48D5-A6A2-95C440D409EF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E60F498B-EDAF-44D2-AED0-DFA2303657D3}

@@ -1,4 +1,4 @@
-window.hideScrollOverflowByTag = (tagName) => {
+﻿window.hideScrollOverflowByTag = (tagName) => {
     if (tagName.toLowerCase() === "body") {
         document.body.classList.add("blazor-javascript-no-overflow");
     } else {

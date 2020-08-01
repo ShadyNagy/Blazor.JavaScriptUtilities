@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
 
@@ -12,7 +12,7 @@
     <Company>ShadyNagy.com</Company>
     <Description>Blazor JavaScript Utilities.</Description>
     <Summary>Blazor JavaScript Utilities.</Summary>
-    <Version>1.0.3</Version>
+    <Version>1.0.2</Version>
     <PackageReleaseNotes>Start of the project</PackageReleaseNotes>
     <AssemblyName>ShadyNagy.Blazor.JavaScriptUtilities</AssemblyName>
     <Features>strict</Features>
@@ -35,21 +35,14 @@
 
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
-    <DefineConstants>TRACE;DEBUG</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
-    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
-  </PropertyGroup>
-
   <ItemGroup>
-    <PackageReference Include="BuildBundlerMinifier" Version="3.2.447" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.AspNetCore.Components" Version="3.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="3.0.0" />
+    <PackageReference Include="BuildBundlerMinifier" Version="3.2.449" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.AspNetCore.Components" Version="3.1.6" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="3.1.6" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="icon.png" Pack="true" Visible="false" PackagePath="" />
+    <None Include="icon.png" Pack="true" PackagePath="\" />
+    <None Include="bundleconfig.json" />
   </ItemGroup>
 
 </Project>

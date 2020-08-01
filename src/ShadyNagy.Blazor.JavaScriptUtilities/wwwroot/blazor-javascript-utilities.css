@@ -1,0 +1,12 @@
+.blazor-javascript-no-overflow {
+    overflow: hidden !important;
+}
+
+.blazor-javascript-v-no-overflow {
+    overflow-y: hidden !important;
+}
+
+.blazor-javascript-h-no-overflow {
+    overflow-x: hidden !important;
+}
+
