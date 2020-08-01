@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ShadyNagy.Blazor.JavaScriptUtilities.Services
 {
@@ -10,5 +11,6 @@ namespace ShadyNagy.Blazor.JavaScriptUtilities.Services
         Task<int> CountAsync();
         Task<bool> RemoveAsync(string key);
         Task<bool> ClearAsync();
+        Task<Dictionary<string, string>> GetAllAsync();
     }
 }

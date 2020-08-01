@@ -3,20 +3,119 @@
 @inject IBlazorLocalStorage BlazorLocalStorage
 
 <div class="row">
-    <div class="col-4">
-        <button class="btn btn-primary" @onclick="IsLocalStorageAvailable">Check Local Storage Available</button>
+    <div class="row col-12">
+        <h2> Check Browser Support Local Storage </h2>
     </div>
     <div class="col-4">
-        Local Storage Available: @IsAvailable
+        <button class="btn btn-primary" @onclick="IsLocalStorageAvailable">Check</button>
     </div>
+    <div class="col-4">
+        Local Storage Available In Browser: @IsAvailable
+    </div>
+</div>
+
+<br />
+<br />
+<br />
+
+<div class="row">
+    <div class="row col-12">
+        <h2> Set Local Storage </h2>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <label> Key </label>
+            <input type="text" @bind="KeyToSet" />
+        </div>
+        <div class="col-4">
+            <label> Value </label>
+            <input type="text" @bind="ValueToSet" />
+        </div>
+        <div class="col-4">
+            <br />
+            <button class="btn btn-primary" @onclick="SetLocalStorage">Set Local Storage</button>
+        </div>
+    </div>
+</div>
+
+<br />
+<br />
+<br />
+
+<div class="row">
+    <div class="row col-12">
+        <h2> Local Storage List </h2>
+    </div>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Value</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var (key, value) in LocalStorageList)
+            {
+                <tr>
+                    <td>@key</td>
+                    <td>@value</td>
+                    <td>
+                        <button @onclick="@(() => DeleteClick(key))" class="btn btn-danger">
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>
 
 @code
 {
     private bool IsAvailable { get; set; }
+    private string KeyToSet { get; set; }
+    private string ValueToSet { get; set; }
+    private Dictionary<string, string> LocalStorageList { get; set; } = new Dictionary<string, string>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await IsLocalStorageAvailable();
+        await RefreshLocalStorageTable();
+        await base.OnInitializedAsync();
+    }
 
     private async Task IsLocalStorageAvailable()
     {
         IsAvailable = await BlazorLocalStorage.IsAvailableAsync();
     }
+
+    private async Task SetLocalStorage()
+    {
+        var result = await BlazorLocalStorage.SetAsync(KeyToSet, ValueToSet);
+        if (!result)
+        {
+            return;
+        }
+
+        await RefreshLocalStorageTable();
+    }
+
+    private async Task DeleteClick(string key)
+    {
+        var result = await BlazorLocalStorage.RemoveAsync(key);
+        if (!result)
+        {
+            return;
+        }
+
+        await RefreshLocalStorageTable();
+    }
+
+    private async Task RefreshLocalStorageTable()
+    {
+        LocalStorageList = await BlazorLocalStorage.GetAllAsync();
+    }
+
+
 }

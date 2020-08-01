@@ -188,3 +188,24 @@ window.storageClear = (type) => {
         return false;
     }
 };
+
+window.storageGetAll = (type) => {
+    try {
+        var storage = window[type];
+
+        var result = [];
+        var keys = Object.keys(storage);
+
+        for (var i = 0; i < keys.length; i++) {
+            if (!keys[i]) {
+                continue;
+            }
+            result.push(keys[i].toString() + '=' + storage.getItem(keys[i].toString()));
+        }
+
+        return result;
+    }
+    catch (e) {
+        return [];
+    }
+};

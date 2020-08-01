@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.JSInterop;
 using ShadyNagy.Blazor.JavaScriptUtilities.Constants;
 
@@ -45,6 +47,20 @@ namespace ShadyNagy.Blazor.JavaScriptUtilities.Services
             return await _jsRuntime.InvokeAsync<bool>(JSInteropConstants.Storage.Clear, "localStorage");
         }
 
+        public async Task<Dictionary<string, string>> GetAllAsync()
+        {
+            var result = new Dictionary<string, string>();
+
+            var localStorageList = await _jsRuntime.InvokeAsync<string[]>(JSInteropConstants.Storage.GetAll, "localStorage");
+            if (localStorageList == null || localStorageList.Length <= 0)
+            {
+                return result;
+            }
+
+            result = localStorageList.Select(item => item.Split('=')).ToDictionary(s => s[0], s => s[1]);
+            return result;
+        }
+
         public bool IsAvailable()
         {
             return _jsInProcessRuntime.Invoke<bool>(JSInteropConstants.Storage.Available, "localStorage");
@@ -73,6 +89,20 @@ namespace ShadyNagy.Blazor.JavaScriptUtilities.Services
         public bool Clear()
         {
             return _jsInProcessRuntime.Invoke<bool>(JSInteropConstants.Storage.Clear, "localStorage");
+        }
+
+        public Dictionary<string, string> GetAll()
+        {
+            var result = new Dictionary<string, string>();
+
+            var localStorageList = _jsInProcessRuntime.Invoke<string[]>(JSInteropConstants.Storage.GetAll, "localStorage");
+            if (localStorageList == null || localStorageList.Length <= 0)
+            {
+                return result;
+            }
+
+            result = localStorageList.Select(item => item.Split('=')).ToDictionary(s => s[0], s => s[1]);
+            return result;
         }
     }
 }
