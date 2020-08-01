@@ -91,7 +91,14 @@ Add the following to your *_Imports.razor*
 @using ShadyNagy.Blazor.JavaScriptUtilities.Constants
 ```
 
-### 4. Examples
+### 4. Inject
+
+```razor
+@inject IBlazorScrollController BlazorScrollController
+@inject IBlazorCookie BlazorCookie
+```
+
+### 5. Examples
 
 To hide both scrolls
 ```csharp
