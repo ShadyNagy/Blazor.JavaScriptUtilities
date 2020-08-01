@@ -154,7 +154,7 @@ Please checkout the [sample projects](https://github.com/ShadyNagy/Blazor.JavaSc
 
 ## JavaScipt Files **(add to javascript reference)**
 
-| Javascript File | Description |
+| JavaScript File | Description |
 | --- | --- |
 | blazor-javascript-utilities.js | If **all Javascript** functions are used |
 | cookie.js | If **cookie Javascript** functions are used |
