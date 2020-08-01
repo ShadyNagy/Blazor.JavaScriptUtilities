@@ -1,0 +1,47 @@
+﻿@page "/scrollbar-controller"
+
+@inject IBlazorScrollController BlazorScrollController
+
+<div style="width: 2000px; height: 2000px;">
+    <button class="btn btn-danger" @onclick="HideScrollVertical">Hide Scroll Vertical</button>
+    <button class="btn btn-primary" @onclick="ShowScrollVertical">Show Scroll Vertical</button>
+
+    <button class="btn btn-danger" @onclick="HideScrollHorizontal">Hide Scroll Horizontal</button>
+    <button class="btn btn-primary" @onclick="ShowScrollHorizontal">Show Scroll Horizontal</button>
+
+    <button class="btn btn-danger" @onclick="HideScrollBoth">Hide Scroll Both</button>
+    <button class="btn btn-primary" @onclick="ShowScrollBoth">Show Scroll Both</button>
+</div>
+
+@code
+{
+    private async Task HideScrollVertical()
+    {
+        await BlazorScrollController.HideBodyScrollOverflowAsync(ScrollType.Vertical);
+    }
+
+    private async Task ShowScrollVertical()
+    {
+        await BlazorScrollController.ShowBodyScrollOverflowAsync(ScrollType.Vertical);
+    }
+
+    private async Task HideScrollHorizontal()
+    {
+        await BlazorScrollController.HideBodyScrollOverflowAsync(ScrollType.Horizontal);
+    }
+
+    private async Task ShowScrollHorizontal()
+    {
+        await BlazorScrollController.ShowBodyScrollOverflowAsync(ScrollType.Horizontal);
+    }
+
+    private async Task HideScrollBoth()
+    {
+        await BlazorScrollController.HideBodyScrollOverflowAsync(ScrollType.Both);
+    }
+
+    private async Task ShowScrollBoth()
+    {
+        await BlazorScrollController.ShowBodyScrollOverflowAsync(ScrollType.Both);
+    }
+}
