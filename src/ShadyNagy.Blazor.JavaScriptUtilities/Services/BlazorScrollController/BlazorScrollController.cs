@@ -15,54 +15,64 @@ namespace ShadyNagy.Blazor.JavaScriptUtilities.Services
             _jsInProcessRuntime = jSRuntime as IJSInProcessRuntime;
         }
 
-        public async Task HideBodyScrollOverflow()
+        public async Task HideScrollOverflowByTagAsync(string tagName, ScrollType scrollType)
         {
-            await _jsRuntime.InvokeAsync<string>(JSInteropConstants.HideScrollOverflowByTag, "body");
+            await _jsRuntime.InvokeAsync<string>(JSInteropConstants.HideScrollOverflowByTag, tagName, scrollType);
         }
 
-        public async Task ShowBodyScrollOverflow()
+        public async Task ShowScrollOverflowByTagAsync(string tagName, ScrollType scrollType)
         {
-            await _jsRuntime.InvokeAsync<string>(JSInteropConstants.ShowScrollOverflowByTag, "body");
+            await _jsRuntime.InvokeAsync<string>(JSInteropConstants.ShowScrollOverflowByTag, tagName, scrollType);
         }
 
-        public async Task HideScrollOverflowByTagAsync(string tagName)
+        public async Task HideScrollOverflowByClassAsync(string className, ScrollType scrollType)
         {
-            await _jsRuntime.InvokeAsync<string>(JSInteropConstants.HideScrollOverflowByTag, tagName);
+            await _jsRuntime.InvokeAsync<string>(JSInteropConstants.HideScrollOverflowByClass, className, scrollType);
         }
 
-        public async Task ShowScrollOverflowByTagAsync(string tagName)
+        public async Task ShowScrollOverflowByClassAsync(string className, ScrollType scrollType)
         {
-            await _jsRuntime.InvokeAsync<string>(JSInteropConstants.ShowScrollOverflowByTag, tagName);
+            await _jsRuntime.InvokeAsync<string>(JSInteropConstants.ShowScrollOverflowByClass, className, scrollType);
         }
 
-        public void HideScrollOverflowByTag(string tagName)
+        public async Task HideBodyScrollOverflowAsync(ScrollType scrollType)
         {
-            _jsInProcessRuntime.Invoke<string>(JSInteropConstants.HideScrollOverflowByTag, tagName);
+            await _jsRuntime.InvokeAsync<string>(JSInteropConstants.HideScrollOverflowByTag, "body", scrollType);
         }
 
-        public void ShowScrollOverflowByTag(string tagName)
+        public async Task ShowBodyScrollOverflowAsync(ScrollType scrollType)
         {
-            _jsInProcessRuntime.Invoke<string>(JSInteropConstants.ShowScrollOverflowByTag, tagName);
+            await _jsRuntime.InvokeAsync<string>(JSInteropConstants.ShowScrollOverflowByTag, "body", scrollType);
         }
 
-        public async Task HideScrollOverflowByClassAsync(string className)
+        public void HideScrollOverflowByTag(string tagName, ScrollType scrollType)
         {
-            await _jsRuntime.InvokeAsync<string>(JSInteropConstants.HideScrollOverflowByClass, className);
+            _jsInProcessRuntime.Invoke<string>(JSInteropConstants.HideScrollOverflowByTag, tagName, scrollType);
         }
 
-        public async Task ShowScrollOverflowByClassAsync(string className)
+        public void ShowScrollOverflowByTag(string tagName, ScrollType scrollType)
         {
-            await _jsRuntime.InvokeAsync<string>(JSInteropConstants.ShowScrollOverflowByClass, className);
+            _jsInProcessRuntime.Invoke<string>(JSInteropConstants.ShowScrollOverflowByTag, tagName, scrollType);
         }
 
-        public void HideScrollOverflowByClass(string className)
+        public void HideScrollOverflowByClass(string className, ScrollType scrollType)
         {
-            _jsInProcessRuntime.Invoke<string>(JSInteropConstants.HideScrollOverflowByClass, className);
+            _jsInProcessRuntime.Invoke<string>(JSInteropConstants.HideScrollOverflowByClass, className, scrollType);
         }
 
-        public void ShowScrollOverflowByClass(string className)
+        public void ShowScrollOverflowByClass(string className, ScrollType scrollType)
         {
-            _jsInProcessRuntime.Invoke<string>(JSInteropConstants.ShowScrollOverflowByClass, className);
+            _jsInProcessRuntime.Invoke<string>(JSInteropConstants.ShowScrollOverflowByClass, className, scrollType);
+        }
+
+        public void HideBodyScrollOverflow(ScrollType scrollType)
+        {
+            _jsInProcessRuntime.Invoke<string>(JSInteropConstants.HideScrollOverflowByTag, "body", scrollType);
+        }
+
+        public void ShowBodyScrollOverflow(ScrollType scrollType)
+        {
+            _jsInProcessRuntime.Invoke<string>(JSInteropConstants.ShowScrollOverflowByTag, "body", scrollType);
         }
     }
 }

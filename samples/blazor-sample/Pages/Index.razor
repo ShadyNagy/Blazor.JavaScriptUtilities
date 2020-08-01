@@ -1,4 +1,5 @@
 ﻿@page "/"
+@using ShadyNagy.Blazor.JavaScriptUtilities.Constants
 
 @inject IBlazorScrollController BlazorScrollController
 
@@ -6,8 +7,14 @@
 
 Welcome to your new app.
 
-<button @onclick="HideScroll">Hide Scroll</button>
-<button @onclick="ShowScroll">Show Scroll</button>
+<button @onclick="HideScrollVertical">Hide Scroll Vertical</button>
+<button @onclick="ShowScrollVertical">Show Scroll Vertical</button>
+
+<button @onclick="HideScrollHorizontal">Hide Scroll Horizontal</button>
+<button @onclick="ShowScrollHorizontal">Show Scroll Horizontal</button>
+
+<button @onclick="HideScrollBoth">Hide Scroll Both</button>
+<button @onclick="ShowScrollBoth">Show Scroll Both</button>
 
 <SurveyPrompt Title="How is Blazor working for you?" />
 <SurveyPrompt Title="How is Blazor working for you?" />
@@ -26,13 +33,33 @@ Welcome to your new app.
 
 @code
 {
-    private async Task HideScroll()
+    private async Task HideScrollVertical()
     {
-        await BlazorScrollController.HideScrollOverflowByTagAsync("body");
+        await BlazorScrollController.HideBodyScrollOverflowAsync(ScrollType.Vertical);
     }
 
-    private async Task ShowScroll()
+    private async Task ShowScrollVertical()
     {
-        await BlazorScrollController.ShowScrollOverflowByTagAsync("body");
+        await BlazorScrollController.ShowBodyScrollOverflowAsync(ScrollType.Vertical);
+    }
+
+    private async Task HideScrollHorizontal()
+    {
+        await BlazorScrollController.HideBodyScrollOverflowAsync(ScrollType.Horizontal);
+    }
+
+    private async Task ShowScrollHorizontal()
+    {
+        await BlazorScrollController.ShowBodyScrollOverflowAsync(ScrollType.Horizontal);
+    }
+
+    private async Task HideScrollBoth()
+    {
+        await BlazorScrollController.HideBodyScrollOverflowAsync(ScrollType.Both);
+    }
+
+    private async Task ShowScrollBoth()
+    {
+        await BlazorScrollController.ShowBodyScrollOverflowAsync(ScrollType.Both);
     }
 }

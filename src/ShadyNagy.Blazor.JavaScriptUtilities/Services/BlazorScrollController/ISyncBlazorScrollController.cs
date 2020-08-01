@@ -1,10 +1,14 @@
-﻿namespace ShadyNagy.Blazor.JavaScriptUtilities.Services
+﻿using ShadyNagy.Blazor.JavaScriptUtilities.Constants;
+
+namespace ShadyNagy.Blazor.JavaScriptUtilities.Services
 {
     public interface ISyncBlazorScrollController
     {
-        void HideScrollOverflowByTag(string tagName);
-        void ShowScrollOverflowByTag(string tagName);
-        void HideScrollOverflowByClass(string className);
-        void ShowScrollOverflowByClass(string className);
+        void HideScrollOverflowByTag(string tagName, ScrollType scrollType);
+        void ShowScrollOverflowByTag(string tagName, ScrollType scrollType);
+        void HideScrollOverflowByClass(string className, ScrollType scrollType);
+        void ShowScrollOverflowByClass(string className, ScrollType scrollType);
+        void HideBodyScrollOverflow(ScrollType scrollType);
+        void ShowBodyScrollOverflow(ScrollType scrollType);
     }
 }
