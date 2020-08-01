@@ -15,7 +15,7 @@ namespace blazor_sample
             builder.RootComponents.Add<App>("app");
 
             builder.Services.AddTransient(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
-            builder.Services.AddBlazorScrollController();
+            builder.Services.AddAllBlazorJavaScriptUtilities();
 
             await builder.Build().RunAsync();
         }
