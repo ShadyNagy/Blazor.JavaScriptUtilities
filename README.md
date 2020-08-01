@@ -77,7 +77,7 @@ Add the following line to the `head` tag of your `_Host.cshtml` (Blazor Server) 
 Then add a reference to the Blazor Utilities JavaScript file at the bottom of the respective page after the reference to the Blazor file before </body>.
 
 ```html
-<script src="_content/ShadyNagy.Blazor.JavaScriptUtilities/blazor-javascript-utilities-muin.js" type="text/javascript" language="javascript"></script>
+<script src="_content/ShadyNagy.Blazor.JavaScriptUtilities/blazor-javascript-utilities-min.js" type="text/javascript" language="javascript"></script>
 ```
 
 ### 3. Add Imports
