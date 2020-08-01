@@ -36,5 +36,20 @@ Also you can inject what you need only ex
 builder.Services.AddBlazorScrollController();
 ```
 
+Add style to <head> in index.html
+```html
+<link rel="stylesheet" href="_content/ShadyNagy.Blazor.JavaScriptUtilities/blazor-javascript-utilities.min.css" />
+```
+Add js before </body> in index.html
+```html
+<script src="_content/ShadyNagy.Blazor.JavaScriptUtilities/blazor-javascript-utilities.js" type="text/javascript" language="javascript"></script>
+```
+
+To hide both scrolls
+```csharp
+await BlazorScrollController.HideBodyScrollOverflowAsync(ScrollType.Both);
+```
+
+You can find full samlpe [here](https://github.com/ShadyNagy/Blazor.JavaScriptUtilities/tree/master/samples/blazor-sample)
 
 
