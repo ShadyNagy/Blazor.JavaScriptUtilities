@@ -102,4 +102,19 @@ await BlazorScrollController.HideBodyScrollOverflowAsync(ScrollType.Both);
 
 Please checkout the [sample projects](https://github.com/ShadyNagy/Blazor.JavaScriptUtilities/tree/master/samples/blazor-sample) in this repo to see working examples of the features in the Blazor JavaScript Utilities.
 
+## Registrations List
 
+| Function | Description |
+| --- | --- |
+| `AddAllBlazorJavaScriptUtilities()` | **register** all services |
+| `AddBlazorCookie()` | **register** cookie service only |
+| `AddBlazorScrollController()` | **register** scrollbar controller service only |
+
+## Cookie Functions
+
+| Function | Description |
+| --- | --- |
+| `Task DeleteCookieAsync(string name)` | **delete** cookie by name *(Async)* |
+| `void DeleteCookie(string name)` | **delete** cookie by name *(Sync)* |
+| `Task<string> GetCookieAsync(string name)` | **read** cookie by name *(Async)* |
+| `string GetCookie(string name)` | **read** cookie by name *(Sync)* |
