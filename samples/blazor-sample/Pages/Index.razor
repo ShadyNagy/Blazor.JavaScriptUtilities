@@ -3,33 +3,23 @@
 
 @inject IBlazorScrollController BlazorScrollController
 
-<h1>Hello, world!</h1>
+<div style="width: 2000px; height: 2000px;">
+    <button class="btn btn-danger" @onclick="HideScrollVertical">Hide Scroll Vertical</button>
+    <button class="btn btn-primary" @onclick="ShowScrollVertical">Show Scroll Vertical</button>
 
-Welcome to your new app.
+    <button class="btn btn-danger" @onclick="HideScrollHorizontal">Hide Scroll Horizontal</button>
+    <button class="btn btn-primary" @onclick="ShowScrollHorizontal">Show Scroll Horizontal</button>
 
-<button @onclick="HideScrollVertical">Hide Scroll Vertical</button>
-<button @onclick="ShowScrollVertical">Show Scroll Vertical</button>
+    <button class="btn btn-danger" @onclick="HideScrollBoth">Hide Scroll Both</button>
+    <button class="btn btn-primary" @onclick="ShowScrollBoth">Show Scroll Both</button>
 
-<button @onclick="HideScrollHorizontal">Hide Scroll Horizontal</button>
-<button @onclick="ShowScrollHorizontal">Show Scroll Horizontal</button>
+    <h1>Hello, world!</h1>
 
-<button @onclick="HideScrollBoth">Hide Scroll Both</button>
-<button @onclick="ShowScrollBoth">Show Scroll Both</button>
+    Welcome to your new app.
 
-<SurveyPrompt Title="How is Blazor working for you?" />
-<SurveyPrompt Title="How is Blazor working for you?" />
-<SurveyPrompt Title="How is Blazor working for you?" />
-<SurveyPrompt Title="How is Blazor working for you?" />
-<SurveyPrompt Title="How is Blazor working for you?" />
-<SurveyPrompt Title="How is Blazor working for you?" />
-<SurveyPrompt Title="How is Blazor working for you?" />
-<SurveyPrompt Title="How is Blazor working for you?" />
-<SurveyPrompt Title="How is Blazor working for you?" />
-<SurveyPrompt Title="How is Blazor working for you?" />
-<SurveyPrompt Title="How is Blazor working for you?" />
-<SurveyPrompt Title="How is Blazor working for you?" />
-<SurveyPrompt Title="How is Blazor working for you?" />
-<SurveyPrompt Title="How is Blazor working for you?" />
+    <SurveyPrompt Title="How is Blazor working for you?" />
+</div>
+
 
 @code
 {
