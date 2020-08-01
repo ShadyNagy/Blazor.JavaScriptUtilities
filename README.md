@@ -106,15 +106,15 @@ Please checkout the [sample projects](https://github.com/ShadyNagy/Blazor.JavaSc
 
 | Function | Description |
 | --- | --- |
-| AddAllBlazorJavaScriptUtilities() | **register** all services |
-| AddBlazorCookie() | **register** cookie service only |
-| AddBlazorScrollController() | **register** scrollbar controller service only |
+| AddAllBlazorJavaScriptUtilities() | **Register** all services |
+| AddBlazorCookie() | **Register** cookie service only |
+| AddBlazorScrollController() | **Register** scrollbar controller service only |
 
 ## Cookie Functions
 
 | Function | Description |
 | --- | --- |
-| Task DeleteCookieAsync(string name) | **Relete** cookie by name *(Async)* |
+| Task DeleteCookieAsync(string name) | **Delete** cookie by name *(Async)* |
 | Task<string> GetCookieAsync(string name) | **Read** cookie by name *(Async)* |
 | void DeleteCookie(string name) | **Delete** cookie by name *(Sync)* |
 | string GetCookie(string name) | **Read** cookie by name *(Sync)* |
