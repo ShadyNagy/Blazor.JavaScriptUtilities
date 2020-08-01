@@ -87,7 +87,10 @@ Add the following to your *_Imports.razor*
 ```razor
 @using ShadyNagy.Blazor.JavaScriptUtilities
 @using ShadyNagy.Blazor.JavaScriptUtilities.Services
+@using ShadyNagy.Blazor.JavaScriptUtilities.Constants
 ```
+
+### 4. Examples
 
 To hide both scrolls
 ```csharp
