@@ -18,6 +18,7 @@
 
 # Blazor.JavaScriptUtilities
 Utilities by JavaScript for Blazor (Scroll Hide, Scroll Show, Cookie Read, Cookie Delete, ...... and more comming).
+![scrollbar-controller](https://user-images.githubusercontent.com/6225593/89104489-0963e000-d41a-11ea-8bf4-9bb8f009449d.gif)
 
 ## Give a Star! :star:
 If you like or are using this project please give it a star. Thanks!
