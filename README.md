@@ -144,7 +144,7 @@ Please checkout the [sample projects](https://github.com/ShadyNagy/Blazor.JavaSc
 | ScrollType.Horizontal | **Horizontal** scrollbar will be affected |
 | ScrollType.Both | **Vertical & Horizontal** scrollbar will be affected |
 
-## JavaScipt Files
+## JavaScipt Files **(to add reference to javascript reference)**
 
 | Javascript File | Description |
 | --- | --- |
