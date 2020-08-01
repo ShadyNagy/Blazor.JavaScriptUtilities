@@ -114,7 +114,33 @@ Please checkout the [sample projects](https://github.com/ShadyNagy/Blazor.JavaSc
 
 | Function | Description |
 | --- | --- |
-| `Task DeleteCookieAsync(string name)` | **delete** cookie by name *(Async)* |
-| `void DeleteCookie(string name)` | **delete** cookie by name *(Sync)* |
-| `Task<string> GetCookieAsync(string name)` | **read** cookie by name *(Async)* |
-| `string GetCookie(string name)` | **read** cookie by name *(Sync)* |
+| `Task DeleteCookieAsync(string name)` | **Relete** cookie by name *(Async)* |
+| `Task<string> GetCookieAsync(string name)` | **Read** cookie by name *(Async)* |
+| `void DeleteCookie(string name)` | **Delete** cookie by name *(Sync)* |
+| `string GetCookie(string name)` | **Read** cookie by name *(Sync)* |
+
+## Scrollbar Controller Functions
+
+| Function | Description |
+| --- | --- |
+| `Task HideScrollOverflowByTagAsync(string tagName, ScrollType scrollType)` | **Hide** scrollbar overflow by tag name *(Async)* |
+| `Task ShowScrollOverflowByTagAsync(string tagName, ScrollType scrollType)` | **Show** scrollbar overflow by tag name *(Async)* |
+| `Task HideScrollOverflowByClassAsync(string tagName, ScrollType scrollType)` | **Hide** scrollbar overflow by class name *(Async)* |
+| `Task ShowScrollOverflowByClassAsync(string tagName, ScrollType scrollType)` | **Show** scrollbar overflow by class name *(Async)* |
+| `Task HideBodyScrollOverflowAsync(ScrollType scrollType)` | **Hide** scrollbar overflow from body, it will help in modal *(Async)* |
+| `Task ShowBodyScrollOverflowAsync(ScrollType scrollType)` | **Show** scrollbar overflow from body, it will help in modal  *(Async)* |
+| `Task HideScrollOverflowByTag(string tagName, ScrollType scrollType)` | **Hide** scrollbar overflow by tag name *(Sync)* |
+| `Task ShowScrollOverflowByTag(string tagName, ScrollType scrollType)` | **Show** scrollbar overflow by tag name *(Sync)* |
+| `Task HideScrollOverflowByClass(string tagName, ScrollType scrollType)` | **Hide** scrollbar overflow by class name *(Sync)* |
+| `Task ShowScrollOverflowByClass(string tagName, ScrollType scrollType)` | **Show** scrollbar overflow by class name *(Sync)* |
+| `Task HideBodyScrollOverflow(ScrollType scrollType)` | **Hide** scrollbar overflow from body, it will help in modal *(Sync)* |
+| `Task ShowBodyScrollOverflow(ScrollType scrollType)` | **Show** scrollbar overflow from body, it will help in modal  *(Sync)* |
+
+## Scrollbar Type
+
+| Type | Description |
+| --- | --- |
+| `ScrollType.Vertical` | **Vertical** scrollbar will be affected |
+| `ScrollType.Horizontal` | **Horizontal** scrollbar will be affected |
+| `ScrollType.Both` | **Vertical & Horizontal** scrollbar will be affected |
+
