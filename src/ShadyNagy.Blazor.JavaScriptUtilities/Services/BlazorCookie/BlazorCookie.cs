@@ -17,22 +17,22 @@ namespace ShadyNagy.Blazor.JavaScriptUtilities.Services
 
         public async Task DeleteCookieAsync(string name)
         {
-            await _jsRuntime.InvokeAsync<string>(JSInteropConstants.DeleteCookie, name);
+            await _jsRuntime.InvokeAsync<string>(JSInteropConstants.Cookie.Delete, name);
         }
 
         public async Task<string> GetCookieAsync(string name)
         {
-            return await _jsRuntime.InvokeAsync<string>(JSInteropConstants.GetCookie, name);
+            return await _jsRuntime.InvokeAsync<string>(JSInteropConstants.Cookie.Get, name);
         }
 
         public void DeleteCookie(string name)
         {
-            _jsInProcessRuntime.Invoke<string>(JSInteropConstants.DeleteCookie, name);
+            _jsInProcessRuntime.Invoke<string>(JSInteropConstants.Cookie.Delete, name);
         }
 
         public string GetCookie(string name)
         {
-            return _jsInProcessRuntime.Invoke<string>(JSInteropConstants.GetCookie, name);
+            return _jsInProcessRuntime.Invoke<string>(JSInteropConstants.Cookie.Get, name);
         }
     }
 }
