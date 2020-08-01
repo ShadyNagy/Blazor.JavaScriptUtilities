@@ -12,5 +12,6 @@ namespace ShadyNagy.Blazor.JavaScriptUtilities.Constants
         internal static string ShowScrollOverflowByTag => "showScrollOverflowByTag";
         internal static string HideScrollOverflowByClass => "hideScrollOverflowByClass";
         internal static string ShowScrollOverflowByClass => "showScrollOverflowByClass";
+        internal static string LocalStorageAvailable => "localStorageAvailable";
     }
 }
