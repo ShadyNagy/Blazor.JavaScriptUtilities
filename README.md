@@ -17,4 +17,24 @@
 </p>
 
 # Blazor.JavaScriptUtilities
-Utilities by JavaScript for Blazor.
+Utilities by JavaScript for Blazor (Scroll Hide, Scroll Show, Cookie Read, Cookie Delete, ......).
+
+## Give a Star! :star:
+If you like or are using this project please give it a star. Thanks!
+
+## How To Use
+```powershell
+Install-Package ShadyNagy.Blazor.JavaScriptUtilities
+```
+
+In program you need to inject the library in Main.cs
+```csharp
+builder.Services.AddAllBlazorJavaScriptUtilities();
+```
+Also you can inject what you need only ex
+```csharp
+builder.Services.AddBlazorScrollController();
+```
+
+
+
