@@ -110,7 +110,7 @@ await BlazorScrollController.HideBodyScrollOverflowAsync(ScrollType.Both);
 
 Please checkout the [sample projects](https://github.com/ShadyNagy/Blazor.JavaScriptUtilities/tree/master/samples/blazor-sample) in this repo to see working examples of the features in the Blazor JavaScript Utilities.
 
-## Registrations List
+## Registration Functions
 
 | Function | Description |
 | --- | --- |
@@ -144,7 +144,7 @@ Please checkout the [sample projects](https://github.com/ShadyNagy/Blazor.JavaSc
 | Task HideBodyScrollOverflow(ScrollType scrollType) | **Hide** scrollbar overflow from body, it will help in modal *(Sync)* |
 | Task ShowBodyScrollOverflow(ScrollType scrollType) | **Show** scrollbar overflow from body, it will help in modal  *(Sync)* |
 
-## Scrollbar Type
+## Scrollbar Types
 
 | Type | Description |
 | --- | --- |
