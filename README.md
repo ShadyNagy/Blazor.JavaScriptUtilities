@@ -203,4 +203,5 @@ Please checkout the [sample projects](https://github.com/ShadyNagy/Blazor.JavaSc
 | blazor-javascript-utilities.js | If **all Javascript** functions are used |
 | cookie.js | If **cookie Javascript** functions are used |
 | scroll-controller.js | If **scrollbar controller Javascript** functions are used |
+| storage.js | If **local storage Javascript** functions are used |
 
