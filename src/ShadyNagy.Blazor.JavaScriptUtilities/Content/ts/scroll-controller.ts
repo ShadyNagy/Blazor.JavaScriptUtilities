@@ -1,4 +1,6 @@
-﻿export function hide(element: HTMLElement, scrollType: number) {
+﻿export { };
+
+function hide(element: HTMLElement, scrollType: number) {
     if (scrollType === 1) {
         element.classList.add("blazor-javascript-v-no-overflow");
     } else if (scrollType === 2) {
@@ -9,7 +11,7 @@
     }
 }
 
-export function show(element: HTMLElement, scrollType: number) {
+function show(element: HTMLElement, scrollType: number) {
     if (scrollType === 1) {
         element.classList.remove("blazor-javascript-v-no-overflow");
     } else if (scrollType === 2) {
@@ -20,7 +22,7 @@ export function show(element: HTMLElement, scrollType: number) {
     }
 }
 
-export function hideScrollOverflowByTag(tagName: string, scrollType: number) {
+function hideScrollOverflowByTag(tagName: string, scrollType: number) {
     if (tagName === "body") {
         hide(document.body, scrollType);
     } else {
@@ -31,7 +33,7 @@ export function hideScrollOverflowByTag(tagName: string, scrollType: number) {
     }
 }
 
-export function hideScrollOverflowByClass(className: string, scrollType: number) {
+function hideScrollOverflowByClass(className: string, scrollType: number) {
     if (className === "body") {
         hide(document.body, scrollType);
     } else {
@@ -42,7 +44,7 @@ export function hideScrollOverflowByClass(className: string, scrollType: number)
     }
 }
 
-export function showScrollOverflowByTag(tagName: string, scrollType: number) {
+function showScrollOverflowByTag(tagName: string, scrollType: number) {
     if (tagName === "body") {
         show(document.body, scrollType);
     } else {
@@ -53,7 +55,7 @@ export function showScrollOverflowByTag(tagName: string, scrollType: number) {
     }
 }
 
-export function showScrollOverflowByClass(className: string, scrollType: number){
+function showScrollOverflowByClass(className: string, scrollType: number){
     if (className === "body") {
         show(document.body, scrollType);
     } else {
@@ -64,11 +66,11 @@ export function showScrollOverflowByClass(className: string, scrollType: number)
     }
 }
 
-export function hideBodyScrollOverflow(scrollType: number) {
+function hideBodyScrollOverflow(scrollType: number) {
     hide(document.body, scrollType);
 }
 
-export function showBodyScrollOverflow(scrollType: number) {
+function showBodyScrollOverflow(scrollType: number) {
     show(document.body, scrollType);
 }
 

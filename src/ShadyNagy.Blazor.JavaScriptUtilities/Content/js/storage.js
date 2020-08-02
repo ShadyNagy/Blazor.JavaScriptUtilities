@@ -1,4 +1,4 @@
-export function getStorage(type) {
+function getStorage(type) {
     try {
         if (type.toLowerCase() === 'sessionstorage') {
             return sessionStorage;
@@ -14,7 +14,7 @@ export function getStorage(type) {
         return null;
     }
 }
-export function storageAvailable(type) {
+function storageAvailable(type) {
     let storage = getStorage(type);
     if (storage === null) {
         return false;
@@ -34,7 +34,7 @@ export function storageAvailable(type) {
             (storage && storage.length !== 0);
     }
 }
-export function storageSet(type, key, value) {
+function storageSet(type, key, value) {
     try {
         let storage = getStorage(type);
         if (storage === null) {
@@ -47,7 +47,7 @@ export function storageSet(type, key, value) {
         return false;
     }
 }
-export function storageGet(type, key) {
+function storageGet(type, key) {
     try {
         let storage = getStorage(type);
         if (storage === null) {
@@ -60,7 +60,7 @@ export function storageGet(type, key) {
     }
 }
 ;
-export function storageRemove(type, key) {
+function storageRemove(type, key) {
     try {
         let storage = getStorage(type);
         if (storage === null) {
@@ -76,7 +76,7 @@ export function storageRemove(type, key) {
         return false;
     }
 }
-export function storageCount(type) {
+function storageCount(type) {
     try {
         let storage = getStorage(type);
         if (storage === null) {
@@ -91,7 +91,7 @@ export function storageCount(type) {
         return 0;
     }
 }
-export function storageClear(type) {
+function storageClear(type) {
     try {
         let storage = getStorage(type);
         if (storage === null) {
@@ -104,7 +104,7 @@ export function storageClear(type) {
         return false;
     }
 }
-export function storageGetAll(type) {
+function storageGetAll(type) {
     try {
         let storage = getStorage(type);
         if (storage === null) {
@@ -124,7 +124,7 @@ export function storageGetAll(type) {
         return [];
     }
 }
-export function storageListener(componentInstance) {
+function storageListener(componentInstance) {
     window.addEventListener('storage', (e) => {
         let result;
         result.key = e.key;

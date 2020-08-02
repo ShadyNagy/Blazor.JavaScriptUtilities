@@ -1,4 +1,6 @@
-﻿export function getStorage(type: string) {
+﻿export { };
+
+function getStorage(type: string) {
     try {
         if (type.toLowerCase() === 'sessionstorage') {
             return sessionStorage;
@@ -12,7 +14,7 @@
     }
 }
 
-export function storageAvailable(type: string) {
+function storageAvailable(type: string) {
     let storage = getStorage(type);
     if (storage === null) {
         return false;
@@ -34,7 +36,7 @@ export function storageAvailable(type: string) {
     }
 }
 
-export function storageSet(type: string, key: string, value: string) {
+function storageSet(type: string, key: string, value: string) {
     try {
         let storage = getStorage(type);
         if (storage === null) {
@@ -50,7 +52,7 @@ export function storageSet(type: string, key: string, value: string) {
     }
 }
 
-export function storageGet(type: string, key: string) {
+function storageGet(type: string, key: string) {
     try {
         let storage = getStorage(type);
         if (storage === null) {
@@ -63,7 +65,7 @@ export function storageGet(type: string, key: string) {
     }
 };
 
-export function storageRemove(type: string, key: string) {
+function storageRemove(type: string, key: string) {
     try {
         let storage = getStorage(type);
         if (storage === null) {
@@ -82,7 +84,7 @@ export function storageRemove(type: string, key: string) {
     }
 }
 
-export function storageCount(type: string) {
+function storageCount(type: string) {
     try {
         let storage = getStorage(type);
         if (storage === null) {
@@ -99,7 +101,7 @@ export function storageCount(type: string) {
     }
 }
 
-export function storageClear(type: string) {
+function storageClear(type: string) {
     try {
         let storage = getStorage(type);
         if (storage === null) {
@@ -115,7 +117,7 @@ export function storageClear(type: string) {
     }
 }
 
-export function storageGetAll(type: string) {
+function storageGetAll(type: string) {
     try {
         let storage = getStorage(type);
         if (storage === null) {
@@ -139,7 +141,7 @@ export function storageGetAll(type: string) {
     }
 }
 
-export function storageListener(componentInstance: any) {
+function storageListener(componentInstance: any) {
     window.addEventListener('storage',
         (e) => {
             let result: IStorageChanged;

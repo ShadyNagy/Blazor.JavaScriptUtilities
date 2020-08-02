@@ -13,6 +13,7 @@
   ],
   "files": [
     "./blazor-javascript-utilities.ts",
+    "./file.ts",
     "./cookie.ts",
     "./scroll-controller.ts",
     "./storage.ts"

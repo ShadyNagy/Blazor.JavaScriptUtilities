@@ -1,4 +1,4 @@
-export function getCookie(cname) {
+function getCookie(cname) {
     const name = cname + '=';
     const decodedCookie = decodeURIComponent(document.cookie);
     const ca = decodedCookie.split(';');
@@ -13,7 +13,7 @@ export function getCookie(cname) {
     }
     return '';
 }
-export function deleteCookie(cname) {
+function deleteCookie(cname) {
     document.cookie = cname + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
 }
 //# sourceMappingURL=cookie.js.map

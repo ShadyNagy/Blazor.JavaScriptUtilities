@@ -1,4 +1,4 @@
-export function hide(element, scrollType) {
+function hide(element, scrollType) {
     if (scrollType === 1) {
         element.classList.add("blazor-javascript-v-no-overflow");
     }
@@ -10,7 +10,7 @@ export function hide(element, scrollType) {
         element.classList.add("blazor-javascript-h-no-overflow");
     }
 }
-export function show(element, scrollType) {
+function show(element, scrollType) {
     if (scrollType === 1) {
         element.classList.remove("blazor-javascript-v-no-overflow");
     }
@@ -22,7 +22,7 @@ export function show(element, scrollType) {
         element.classList.remove("blazor-javascript-h-no-overflow");
     }
 }
-export function hideScrollOverflowByTag(tagName, scrollType) {
+function hideScrollOverflowByTag(tagName, scrollType) {
     if (tagName === "body") {
         hide(document.body, scrollType);
     }
@@ -33,7 +33,7 @@ export function hideScrollOverflowByTag(tagName, scrollType) {
         }
     }
 }
-export function hideScrollOverflowByClass(className, scrollType) {
+function hideScrollOverflowByClass(className, scrollType) {
     if (className === "body") {
         hide(document.body, scrollType);
     }
@@ -44,7 +44,7 @@ export function hideScrollOverflowByClass(className, scrollType) {
         }
     }
 }
-export function showScrollOverflowByTag(tagName, scrollType) {
+function showScrollOverflowByTag(tagName, scrollType) {
     if (tagName === "body") {
         show(document.body, scrollType);
     }
@@ -55,7 +55,7 @@ export function showScrollOverflowByTag(tagName, scrollType) {
         }
     }
 }
-export function showScrollOverflowByClass(className, scrollType) {
+function showScrollOverflowByClass(className, scrollType) {
     if (className === "body") {
         show(document.body, scrollType);
     }
@@ -66,10 +66,10 @@ export function showScrollOverflowByClass(className, scrollType) {
         }
     }
 }
-export function hideBodyScrollOverflow(scrollType) {
+function hideBodyScrollOverflow(scrollType) {
     hide(document.body, scrollType);
 }
-export function showBodyScrollOverflow(scrollType) {
+function showBodyScrollOverflow(scrollType) {
     show(document.body, scrollType);
 }
 //# sourceMappingURL=scroll-controller.js.map

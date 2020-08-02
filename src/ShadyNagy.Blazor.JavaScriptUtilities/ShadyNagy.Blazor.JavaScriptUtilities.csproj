@@ -36,7 +36,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Content\js\cookie.js" />
+    <TypeScriptCompile Remove="Content\ts\file.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Content\ts\blazor-javascript-utilities.ts" />
+    <None Include="Content\ts\file.ts" />
     <None Include="Content\ts\cookie.ts" />
     <None Include="Content\ts\scroll-controller.ts" />
     <None Include="Content\ts\storage.ts" />

@@ -32,6 +32,9 @@ namespace ShadyNagy.Blazor.JavaScriptUtilities.Constants
             internal static string AddListener => "storageListener";
         }
 
-        
+        internal static class File
+        {
+            internal static string DownloadFromUrl => "downloadFromUrl";
+        }
     }
 }
