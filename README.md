@@ -27,6 +27,15 @@ Utilities by JavaScript for Blazor
 - Local Storage Count
 - Local Storage Listener for changes
 
+- Session Storage Available to check if available in browser
+- Session Storage Set
+- Session Storage Read
+- Session Storage Remove by key
+- Session Storage Read All without keys
+- Session Storage Remove All
+- Session Storage Count
+- Session Storage Listener for changes
+
 - Scroll Hide
 - Scroll Show
 
