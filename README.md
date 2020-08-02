@@ -36,6 +36,7 @@ Utilities by JavaScript for Blazor
 
 ...... and more comming.
 
+![Local Storage](LocalStorageDemo.gif)
 ![scrollbar-controller](https://user-images.githubusercontent.com/6225593/89104489-0963e000-d41a-11ea-8bf4-9bb8f009449d.gif)
 
 ## Give a Star! :star:
