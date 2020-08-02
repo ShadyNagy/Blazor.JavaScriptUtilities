@@ -17,7 +17,24 @@
 </p>
 
 # Blazor.JavaScriptUtilities
-Utilities by JavaScript for Blazor (Scroll Hide, Scroll Show, Cookie Read, Cookie Delete, ...... and more comming).
+Utilities by JavaScript for Blazor 
+- Local Storage Avaliable to check browser support local storage
+- Local Storage Set
+- Local Storage Read
+- Local Storage Remove by key
+- Local Storage Read All without keys
+- Local Storage Remove All
+- Local Storage Count
+- Local Storage Listener for changes
+
+- Scroll Hide
+- Scroll Show
+
+- Cookie Read
+- Cookie Delete 
+
+
+...... and more comming.
 
 ![scrollbar-controller](https://user-images.githubusercontent.com/6225593/89104489-0963e000-d41a-11ea-8bf4-9bb8f009449d.gif)
 
@@ -117,6 +134,31 @@ Please checkout the [sample projects](https://github.com/ShadyNagy/Blazor.JavaSc
 | AddAllBlazorJavaScriptUtilities() | **Register** all services |
 | AddBlazorCookie() | **Register** cookie service only |
 | AddBlazorScrollController() | **Register** scrollbar controller service only |
+
+## Local Storage Functions
+
+| Function | Description |
+| --- | --- |
+| Task<bool> IsAvailableAsync() | **Is Available** on this browser *(Async)* |
+| Task<bool> SetAsync(string key, string value) | **Set** local storage *(Async)* |
+| Task<bool> GetAsync(string key) | **Get** local storage by key *(Async)* |
+| Task<int> CountAsync() | **Count** how many local storage *(Async)* |
+| Task<bool> RemoveAsync(string key) | **Remove** local storage by key *(Async)* |
+| Task<bool> ClearAsync() | **Clear** all local storage *(Async)* |
+| Task<Dictionary<string, string>> GetAllAsync() | **Get All** local storage *(Async)* |
+| OnChange | **Event** to detect changes at local storage *(Async)* |
+| Task AddStorageListenerAsync() | **Add Listener** to detect changes at local storage *(Async)* |
+| string GetChangedKey() | **Get Changed Key** if local storage changed *(Async)* |
+| ChangedLocalStorage GetChangedLocalStorage() | **Get Changed** will get Key, New Value, Old Value and, URL *(Async)* |
+        
+## Changed Local Storage Class
+
+| property | Description |
+| --- | --- |
+| Key | Local Storage Key |
+| New Value | Local Storage New Value |
+| Old Value | Local Storage Old Value |
+| URL | Local Storage URL |
 
 ## Cookie Functions
 
