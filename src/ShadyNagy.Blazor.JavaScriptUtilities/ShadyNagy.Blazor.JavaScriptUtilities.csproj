@@ -49,6 +49,10 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Content\ts\blazor-javascript-utilities.ts" />
+    <None Include="Content\ts\cookie.ts" />
+    <None Include="Content\ts\scroll-controller.ts" />
+    <None Include="Content\ts\storage.ts" />
     <None Include="icon.png" Pack="true" PackagePath="\" />
     <None Include="bundleconfig.json" />
   </ItemGroup>
