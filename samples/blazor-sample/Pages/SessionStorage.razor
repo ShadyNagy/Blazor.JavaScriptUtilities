@@ -1,0 +1,187 @@
+﻿@page "/session-storage"
+
+@inject IBlazorSessionStorage BlazorSessionStorage
+
+<div class="row">
+    <div class="row col-12">
+        <h2> Check Browser Support Session Storage </h2>
+    </div>
+    <div class="col-12">
+        Session Storage Available In Browser: @IsAvailable
+    </div>
+    <div class="col-12">
+        <button class="btn btn-primary" @onclick="IsSessionStorageAvailable">Check</button>
+    </div>
+</div>
+
+<br />
+
+<div class="row">
+    <div class="row col-12">
+        <h2> Changed Session Storage </h2>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            Key: @ChangedSessionStorage.Key
+        </div>
+        <div class="col-12">
+            New Value: @ChangedSessionStorage.NewValue
+        </div>
+        <div class="col-12">
+            Old Value: @ChangedSessionStorage.OldValue
+        </div>
+        <div class="col-12">
+            Url Value: @ChangedSessionStorage.Url
+        </div>
+    </div>
+</div>
+
+<br />
+
+<div class="row">
+    <div class="row col-12">
+        <h2> Set Session Storage </h2>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <label> Key </label>
+            <input type="text" @bind="KeyToSet" />
+        </div>
+        <div class="col-4">
+            <label> Value </label>
+            <input type="text" @bind="ValueToSet" />
+        </div>
+        <div class="col-4">
+            <br />
+            <button class="btn btn-primary" @onclick="SetSessionStorage">Set Session Storage</button>
+        </div>
+    </div>
+</div>
+
+<br />
+
+<div class="row">
+    <div class="row col-12">
+        <h2> Session Storage List </h2>
+    </div>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Value</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var (key, value) in SessionStorageList)
+            {
+                <tr>
+                    <td>@key</td>
+                    <td>@value</td>
+                    <td>
+                        <button @onclick="@(() => DeleteClick(key))" class="btn btn-danger">
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<br />
+
+<div class="row">
+    <button @onclick="DeleteAllClick" class="btn btn-danger">
+        Delete All
+    </button>
+</div>
+
+<br />
+
+<div class="row">
+    <div class="row col-12">
+        @SessionStorageCount
+    </div>
+    <div class="row col-12">
+        <button @onclick="GetCount" class="btn btn-primary">
+            Get Count
+        </button>
+    </div>
+</div>
+
+@code
+{
+    private bool IsAvailable { get; set; } = false;
+    private int SessionStorageCount { get; set; } = 0;
+    private string KeyToSet { get; set; } = string.Empty;
+    private string ValueToSet { get; set; } = string.Empty;
+    private ChangedSessionStorage ChangedSessionStorage { get; set; } = new ChangedSessionStorage();
+    private Dictionary<string, string> SessionStorageList { get; set; } = new Dictionary<string, string>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await BlazorSessionStorage.AddStorageListenerAsync();
+        BlazorSessionStorage.OnChange += SessionStorageChanged;
+
+        await IsSessionStorageAvailable();
+        await RefreshSessionStorageTable();
+        await base.OnInitializedAsync();
+    }
+
+    private async Task IsSessionStorageAvailable()
+    {
+        IsAvailable = await BlazorSessionStorage.IsAvailableAsync();
+    }
+
+    private async Task SetSessionStorage()
+    {
+        var result = await BlazorSessionStorage.SetAsync(KeyToSet, ValueToSet);
+        if (!result)
+        {
+            return;
+        }
+
+        await RefreshSessionStorageTable();
+    }
+
+    private async Task DeleteClick(string key)
+    {
+        var result = await BlazorSessionStorage.RemoveAsync(key);
+        if (!result)
+        {
+            return;
+        }
+
+        await RefreshSessionStorageTable();
+    }
+
+    private async Task DeleteAllClick()
+    {
+        var result = await BlazorSessionStorage.ClearAsync();
+        if (!result)
+        {
+            return;
+        }
+
+        await RefreshSessionStorageTable();
+    }
+
+    private async Task GetCount()
+    {
+        SessionStorageCount = await BlazorSessionStorage.CountAsync();
+    }
+
+    private async Task RefreshSessionStorageTable()
+    {
+        SessionStorageList = await BlazorSessionStorage.GetAllAsync();
+    }
+
+    private void SessionStorageChanged()
+    {
+        ChangedSessionStorage = BlazorSessionStorage.GetChangedSessionStorage();
+        StateHasChanged();
+    }
+
+
+}
