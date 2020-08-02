@@ -135,6 +135,7 @@ Please checkout the [sample projects](https://github.com/ShadyNagy/Blazor.JavaSc
 | AddAllBlazorJavaScriptUtilities() | **Register** all services |
 | AddBlazorCookie() | **Register** cookie service only |
 | AddBlazorScrollController() | **Register** scrollbar controller service only |
+| AddBlazorLocalStorage() | **Register** local storage service only |
 
 ## Local Storage Functions
 
