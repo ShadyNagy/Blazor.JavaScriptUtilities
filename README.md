@@ -34,7 +34,7 @@ Utilities by JavaScript for Blazor
 - Cookie Delete 
 
 
-...... and more comming.
+...... and more coming.
 
 ![Local Storage](LocalStorageDemo.gif)
 ![scrollbar-controller](https://user-images.githubusercontent.com/6225593/89104489-0963e000-d41a-11ea-8bf4-9bb8f009449d.gif)
