@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "noEmitOnError": true,
+    "removeComments": false,
+    "sourceMap": true,
+    "target": "es6",
+    "outDir": "../js"
+  },
+  "exclude": [
+    "node_modules",
+    "wwwroot"
+  ],
+  "files": [
+    "./blazor-javascript-utilities.ts",
+    "./cookie.ts",
+    "./scroll-controller.ts",
+    "./storage.ts"
+  ],
+  "compileOnSave": true
+}

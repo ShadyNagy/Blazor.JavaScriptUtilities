@@ -1,20 +1,18 @@
-export function getStorage(type) {
+﻿export function getStorage(type: string) {
     try {
         if (type.toLowerCase() === 'sessionstorage') {
             return sessionStorage;
-        }
-        else if (type.toLowerCase() === 'localstorage') {
+        } else if (type.toLowerCase() === 'localstorage') {
             return localStorage;
-        }
-        else {
+        } else {
             return null;
         }
-    }
-    catch (e) {
+    } catch (e) {
         return null;
     }
 }
-export function storageAvailable(type) {
+
+export function storageAvailable(type: string) {
     let storage = getStorage(type);
     if (storage === null) {
         return false;
@@ -23,6 +21,7 @@ export function storageAvailable(type) {
         const x = '__storage_test__';
         storage.setItem(x, x);
         storage.removeItem(x);
+
         return true;
     }
     catch (e) {
@@ -34,20 +33,24 @@ export function storageAvailable(type) {
             (storage && storage.length !== 0);
     }
 }
-export function storageSet(type, key, value) {
+
+export function storageSet(type: string, key: string, value: string) {
     try {
         let storage = getStorage(type);
         if (storage === null) {
             return false;
         }
+
         storage.setItem(key, value);
+
         return true;
     }
     catch (e) {
         return false;
     }
 }
-export function storageGet(type, key) {
+
+export function storageGet(type: string, key: string) {
     try {
         let storage = getStorage(type);
         if (storage === null) {
@@ -58,17 +61,19 @@ export function storageGet(type, key) {
     catch (e) {
         return '';
     }
-}
-;
-export function storageRemove(type, key) {
+};
+
+export function storageRemove(type: string, key: string) {
     try {
         let storage = getStorage(type);
         if (storage === null) {
             return false;
         }
+
         if (storage.length <= 0 || storage.getItem(key) === undefined) {
             return false;
         }
+
         localStorage.removeItem(key);
         return true;
     }
@@ -76,12 +81,14 @@ export function storageRemove(type, key) {
         return false;
     }
 }
-export function storageCount(type) {
+
+export function storageCount(type: string) {
     try {
         let storage = getStorage(type);
         if (storage === null) {
             return 0;
         }
+
         if (storage.length <= 0) {
             return 0;
         }
@@ -91,47 +98,62 @@ export function storageCount(type) {
         return 0;
     }
 }
-export function storageClear(type) {
+
+export function storageClear(type: string) {
     try {
         let storage = getStorage(type);
         if (storage === null) {
             return false;
         }
+
         storage.clear();
+
         return true;
     }
     catch (e) {
         return false;
     }
 }
-export function storageGetAll(type) {
+
+export function storageGetAll(type: string) {
     try {
         let storage = getStorage(type);
         if (storage === null) {
             return [];
         }
-        let result = new Array();
+
+        let result = new Array<string>();
         const keys = Object.keys(storage);
+
         for (let i = 0; i < keys.length; i++) {
             if (!keys[i]) {
                 continue;
             }
             result.push(keys[i].toString() + '=' + storage.getItem(keys[i].toString()));
         }
+
         return result;
     }
     catch (e) {
         return [];
     }
 }
-export function storageListener(componentInstance) {
-    window.addEventListener('storage', (e) => {
-        let result;
-        result.key = e.key;
-        result.oldValue = e.oldValue;
-        result.newValue = e.newValue;
-        result.url = e.url;
-        componentInstance.invokeMethodAsync('StorageChange', JSON.stringify(result));
-    });
+
+export function storageListener(componentInstance: any) {
+    window.addEventListener('storage',
+        (e) => {
+            let result: IStorageChanged;
+            result.key = e.key;
+            result.oldValue = e.oldValue;
+            result.newValue = e.newValue;
+            result.url = e.url;
+            componentInstance.invokeMethodAsync('StorageChange', JSON.stringify(result));
+        });
 }
-//# sourceMappingURL=storage.js.map
+
+export interface IStorageChanged {
+    key: string;
+    oldValue: string;
+    newValue: string;
+    url: string;
+}
