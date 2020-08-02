@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.JSInterop;
@@ -10,11 +11,22 @@ namespace ShadyNagy.Blazor.JavaScriptUtilities.Services
     {
         private readonly IJSRuntime _jsRuntime;
         private readonly IJSInProcessRuntime _jsInProcessRuntime;
+        private void NotifyStorageChanged() => OnChange?.Invoke();
+        private ChangedLocalStorage ChangedLocalStorage { get; set; }
+
+        public event Action OnChange;
 
         public BlazorLocalStorage(IJSRuntime jSRuntime)
         {
             _jsRuntime = jSRuntime;
             _jsInProcessRuntime = jSRuntime as IJSInProcessRuntime;
+        }
+
+        [JSInvokable]
+        public void StorageChange(string data)
+        {
+            ChangedLocalStorage = new ChangedLocalStorage(data);
+            NotifyStorageChanged();
         }
 
         public async Task<bool> IsAvailableAsync()
@@ -61,6 +73,12 @@ namespace ShadyNagy.Blazor.JavaScriptUtilities.Services
             return result;
         }
 
+        public async Task AddStorageListenerAsync()
+        {
+            var thisReference = DotNetObjectReference.Create(this);
+            await _jsRuntime.InvokeAsync<object>(JSInteropConstants.Storage.AddListener, thisReference);
+        }
+
         public bool IsAvailable()
         {
             return _jsInProcessRuntime.Invoke<bool>(JSInteropConstants.Storage.Available, "localStorage");
@@ -103,6 +121,22 @@ namespace ShadyNagy.Blazor.JavaScriptUtilities.Services
 
             result = localStorageList.Select(item => item.Split('=')).ToDictionary(s => s[0], s => s[1]);
             return result;
+        }
+
+        public void AddStorageListener()
+        {
+            var thisReference = DotNetObjectReference.Create(this);
+            _jsInProcessRuntime.Invoke<string>(JSInteropConstants.Storage.AddListener, thisReference);
+        }
+
+        public string GetChangedKey()
+        {
+            return ChangedLocalStorage.Key;
+        }
+
+        public ChangedLocalStorage GetChangedLocalStorage()
+        {
+            return ChangedLocalStorage;
         }
     }
 }

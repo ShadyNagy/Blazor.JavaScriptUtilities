@@ -29,6 +29,7 @@ namespace ShadyNagy.Blazor.JavaScriptUtilities.Constants
             internal static string Remove => "storageRemove";
             internal static string Count => "storageCount";
             internal static string GetAll => "storageGetAll";
+            internal static string AddListener => "storageListener";
         }
 
         

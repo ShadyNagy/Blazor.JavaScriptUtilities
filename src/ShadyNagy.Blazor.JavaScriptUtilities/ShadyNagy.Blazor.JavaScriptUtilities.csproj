@@ -12,8 +12,8 @@
     <Company>ShadyNagy.com</Company>
     <Description>Blazor JavaScript Utilities.</Description>
     <Summary>Blazor JavaScript Utilities.</Summary>
-    <Version>1.0.5</Version>
-    <PackageReleaseNotes>One js file added.</PackageReleaseNotes>
+    <Version>1.0.6</Version>
+    <PackageReleaseNotes>Local Storage Added.</PackageReleaseNotes>
     <AssemblyName>ShadyNagy.Blazor.JavaScriptUtilities</AssemblyName>
     <Features>strict</Features>
     <Copyright>Copyright 2019 - 2020 (c) Shady Nagy. All rights reserved.</Copyright>

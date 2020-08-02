@@ -6,16 +6,36 @@
     <div class="row col-12">
         <h2> Check Browser Support Local Storage </h2>
     </div>
-    <div class="col-4">
-        <button class="btn btn-primary" @onclick="IsLocalStorageAvailable">Check</button>
-    </div>
-    <div class="col-4">
+    <div class="col-12">
         Local Storage Available In Browser: @IsAvailable
+    </div>
+    <div class="col-12">
+        <button class="btn btn-primary" @onclick="IsLocalStorageAvailable">Check</button>
     </div>
 </div>
 
 <br />
-<br />
+
+<div class="row">
+    <div class="row col-12">
+        <h2> Changed Local Storage </h2>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            Key: @ChangedLocalStorage.Key
+        </div>
+        <div class="col-12">
+            New Value: @ChangedLocalStorage.NewValue
+        </div>
+        <div class="col-12">
+            Old Value: @ChangedLocalStorage.OldValue
+        </div>
+        <div class="col-12">
+            Url Value: @ChangedLocalStorage.Url
+        </div>
+    </div>
+</div>
+
 <br />
 
 <div class="row">
@@ -38,8 +58,6 @@
     </div>
 </div>
 
-<br />
-<br />
 <br />
 
 <div class="row">
@@ -71,15 +89,41 @@
     </table>
 </div>
 
+<br />
+
+<div class="row">
+    <button @onclick="DeleteAllClick" class="btn btn-danger">
+        Delete All
+    </button>
+</div>
+
+<br />
+
+<div class="row">
+    <div class="row col-12">
+        @LocalStorageCount
+    </div>
+    <div class="row col-12">
+        <button @onclick="GetCount" class="btn btn-primary">
+            Get Count
+        </button>
+    </div>
+</div>
+
 @code
 {
-    private bool IsAvailable { get; set; }
-    private string KeyToSet { get; set; }
-    private string ValueToSet { get; set; }
+    private bool IsAvailable { get; set; } = false;
+    private int LocalStorageCount { get; set; } = 0;
+    private string KeyToSet { get; set; } = string.Empty;
+    private string ValueToSet { get; set; } = string.Empty;
+    private ChangedLocalStorage ChangedLocalStorage { get; set; } = new ChangedLocalStorage();
     private Dictionary<string, string> LocalStorageList { get; set; } = new Dictionary<string, string>();
 
     protected override async Task OnInitializedAsync()
     {
+        await BlazorLocalStorage.AddStorageListenerAsync();
+        BlazorLocalStorage.OnChange += LocalStorageChanged;
+
         await IsLocalStorageAvailable();
         await RefreshLocalStorageTable();
         await base.OnInitializedAsync();
@@ -112,9 +156,31 @@
         await RefreshLocalStorageTable();
     }
 
+    private async Task DeleteAllClick()
+    {
+        var result = await BlazorLocalStorage.ClearAsync();
+        if (!result)
+        {
+            return;
+        }
+
+        await RefreshLocalStorageTable();
+    }
+
+    private async Task GetCount()
+    {
+        LocalStorageCount = await BlazorLocalStorage.CountAsync();
+    }
+
     private async Task RefreshLocalStorageTable()
     {
         LocalStorageList = await BlazorLocalStorage.GetAllAsync();
+    }
+
+    private void LocalStorageChanged()
+    {
+        ChangedLocalStorage = BlazorLocalStorage.GetChangedLocalStorage();
+        StateHasChanged();
     }
 
 

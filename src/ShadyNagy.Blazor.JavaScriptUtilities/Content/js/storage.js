@@ -100,3 +100,15 @@ window.storageGetAll = (type) => {
         return [];
     }
 };
+
+window.storageListener = (componentInstance) => {
+    window.addEventListener('storage',
+        (e) => {
+            var result = {};
+            result['key'] = e.key;
+            result['oldValue'] = e.oldValue;
+            result['newValue'] = e.newValue;
+            result['url'] = e.url;
+            componentInstance.invokeMethodAsync('StorageChange', JSON.stringify(result));
+        });
+};

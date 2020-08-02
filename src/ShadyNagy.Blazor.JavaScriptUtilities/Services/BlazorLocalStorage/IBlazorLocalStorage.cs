@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace ShadyNagy.Blazor.JavaScriptUtilities.Services
@@ -12,5 +13,9 @@ namespace ShadyNagy.Blazor.JavaScriptUtilities.Services
         Task<bool> RemoveAsync(string key);
         Task<bool> ClearAsync();
         Task<Dictionary<string, string>> GetAllAsync();
+        event Action OnChange;
+        Task AddStorageListenerAsync();
+        string GetChangedKey();
+        ChangedLocalStorage GetChangedLocalStorage();
     }
 }

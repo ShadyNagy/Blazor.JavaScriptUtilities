@@ -5,11 +5,11 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1336480E-183A-4D61-8BE2-A919A18022D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShadyNagy.Blazor.JavaScriptUtilities", "src\ShadyNagy.Blazor.JavaScriptUtilities\ShadyNagy.Blazor.JavaScriptUtilities.csproj", "{8FF96DC4-8C4D-4A65-B78F-4DE709DAC0A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShadyNagy.Blazor.JavaScriptUtilities", "src\ShadyNagy.Blazor.JavaScriptUtilities\ShadyNagy.Blazor.JavaScriptUtilities.csproj", "{8FF96DC4-8C4D-4A65-B78F-4DE709DAC0A3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{FAF3A918-074A-48D5-A6A2-95C440D409EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blazor-sample", "samples\blazor-sample\blazor-sample.csproj", "{D253EAD2-9298-4B98-AADB-7BEC214E4605}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "blazor-sample", "samples\blazor-sample\blazor-sample.csproj", "{D253EAD2-9298-4B98-AADB-7BEC214E4605}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
