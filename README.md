@@ -18,7 +18,7 @@
 
 # Blazor.JavaScriptUtilities
 Utilities by JavaScript for Blazor 
-- Local Storage Available to check browser support local storage
+- Local Storage Available to check if available in browser
 - Local Storage Set
 - Local Storage Read
 - Local Storage Remove by key
