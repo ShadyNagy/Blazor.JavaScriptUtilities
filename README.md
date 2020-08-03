@@ -38,6 +38,7 @@ Utilities by JavaScript for Blazor
 
 - Scroll Hide
 - Scroll Show
+- Scroll To
 
 - Cookie Read
 - Cookie Delete 
@@ -191,6 +192,15 @@ Please checkout the [sample projects](https://github.com/ShadyNagy/Blazor.JavaSc
 | Task ShowScrollOverflowByClassAsync(string tagName, ScrollType scrollType) | **Show** scrollbar overflow by class name *(Async)* |
 | Task HideBodyScrollOverflowAsync(ScrollType scrollType) | **Hide** scrollbar overflow from body, it will help in modal *(Async)* |
 | Task ShowBodyScrollOverflowAsync(ScrollType scrollType) | **Show** scrollbar overflow from body, it will help in modal  *(Async)* |
+| Task<bool> ScrollVToElementByIdAsync(string elementId, string behavior, string block) | **Scroll Verical** to element by id *(Async)* |
+| Task<bool> ScrollVToElementByTagAsync(string tagName, string behavior, string block) | **Scroll Verical** to element by tag *(Async)* |
+| Task<bool> ScrollVToElementByClassAsync(string className, string behavior, string block) | **Scroll Verical** to element by class name *(Async)* |
+| Task<bool> ScrollHToElementByIdAsync(string elementId, string behavior, string inline) | **Scroll Horizontal** to element by id *(Async)* |
+| Task<bool> ScrollHToElementByTagAsync(string tagName, string behavior, string inline) | **Scroll Horizontal** to element by tag *(Async)* |
+| Task<bool> ScrollHToElementByClassAsync(string className, string behavior, string inline) | **Scroll Horizontal** to element by class name *(Async)* |
+| Task<bool> ScrollToBodyAsync(string behavior, string block) | **Scroll Verical** to body *(Async)* |
+| Task<bool> ScrollToBodyTopAsync(string behavior) | **Scroll Verical** to top of body *(Async)* |
+| Task<bool> ScrollToBodyBottomAsync(string behavior) | **Scroll Verical** to bottom of body *(Async)* |
 | Task HideScrollOverflowByTag(string tagName, ScrollType scrollType) | **Hide** scrollbar overflow by tag name *(Sync)* |
 | Task ShowScrollOverflowByTag(string tagName, ScrollType scrollType) | **Show** scrollbar overflow by tag name *(Sync)* |
 | Task HideScrollOverflowByClass(string tagName, ScrollType scrollType) | **Hide** scrollbar overflow by class name *(Sync)* |
@@ -205,6 +215,22 @@ Please checkout the [sample projects](https://github.com/ShadyNagy/Blazor.JavaSc
 | ScrollType.Vertical | **Vertical** scrollbar will be affected |
 | ScrollType.Horizontal | **Horizontal** scrollbar will be affected |
 | ScrollType.Both | **Vertical & Horizontal** scrollbar will be affected |
+
+## Scrollbar Behaviors
+
+| Type | Description |
+| --- | --- |
+| ScrollBehaviors.Auto | **Auto** behavior |
+| ScrollBehaviors.Smooth | **Smooth** behavior |
+
+## Scrollbar Blocks/Inlines
+
+| Type | Description |
+| --- | --- |
+| ScrollBlocks.Start | **Start** |
+| ScrollBlocks.Center | **Center** |
+| ScrollBlocks.End | **End** |
+| ScrollBlocks.Nearest | **Nearest** |
 
 ## JavaScipt Files **(add to javascript reference)**
 
