@@ -2,7 +2,7 @@
 
 @inject IBlazorScrollController BlazorScrollController
 
-<div style="width: 2000px; height: 2000px;">
+<div id="test" class="test" style="width: 2000px; height: 2000px;">
     <button class="btn btn-danger" @onclick="HideScrollVertical">Hide Scroll Vertical</button>
     <button class="btn btn-primary" @onclick="ShowScrollVertical">Show Scroll Vertical</button>
 
@@ -11,6 +11,10 @@
 
     <button class="btn btn-danger" @onclick="HideScrollBoth">Hide Scroll Both</button>
     <button class="btn btn-primary" @onclick="ShowScrollBoth">Show Scroll Both</button>
+
+    <button class="btn btn-primary" @onclick="ScrollToTop" style="position: fixed">Scroll To Top</button>
+    <button class="btn btn-primary" @onclick="ScrollToBottom" style="position: fixed;top: 120px;">Scroll To Bottom</button>
+
 </div>
 
 @code
@@ -43,5 +47,15 @@
     private async Task ShowScrollBoth()
     {
         await BlazorScrollController.ShowBodyScrollOverflowAsync(ScrollType.Both);
+    }
+
+    private async Task ScrollToTop()
+    {
+        await BlazorScrollController.ScrollToBodyTopAsync(ScrollBehaviors.Auto);
+    }
+
+    private async Task ScrollToBottom()
+    {
+        await BlazorScrollController.ScrollToBodyBottomAsync( ScrollBehaviors.Auto);
     }
 }

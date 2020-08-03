@@ -144,11 +144,12 @@ function storageGetAll(type: string) {
 function storageListener(componentInstance: any) {
     window.addEventListener('storage',
         (e) => {
-            let result: IStorageChanged;
-            result.key = e.key;
-            result.oldValue = e.oldValue;
-            result.newValue = e.newValue;
-            result.url = e.url;
+            let result = <IStorageChanged>{
+                key: e.key,
+                oldValue: e.oldValue,
+                newValue: e.newValue,
+                url: e.url
+            }
             componentInstance.invokeMethodAsync('StorageChange', JSON.stringify(result));
         });
 }
