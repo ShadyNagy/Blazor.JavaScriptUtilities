@@ -557,5 +557,30 @@ function storageListener(componentInstance) {
         componentInstance.invokeMethodAsync('StorageChange', JSON.stringify(result));
     });
 }
-/* ==================================================================File================================================================== */
+/* ==================================================================Dialog================================================================== */
+function showAlert(message) {
+    try {
+        window.alert(message);
+        return true;
+    }
+    catch (e) {
+        return false;
+    }
+}
+function showPrompt(message, defaultResponse = '') {
+    try {
+        return window.prompt(message, defaultResponse);
+    }
+    catch (e) {
+        return '';
+    }
+}
+function showConfirm(message) {
+    try {
+        return window.confirm(message);
+    }
+    catch (e) {
+        return false;
+    }
+}
 //# sourceMappingURL=blazor-javascript-utilities.js.map

@@ -12,8 +12,8 @@
     <Company>ShadyNagy.com</Company>
     <Description>Blazor JavaScript Utilities.</Description>
     <Summary>Blazor JavaScript Utilities.</Summary>
-    <Version>1.0.8</Version>
-    <PackageReleaseNotes>Scroll Move Added.</PackageReleaseNotes>
+    <Version>1.0.9</Version>
+    <PackageReleaseNotes>Alert, Prompt and Confirm Added.</PackageReleaseNotes>
     <AssemblyName>ShadyNagy.Blazor.JavaScriptUtilities</AssemblyName>
     <Features>strict</Features>
     <Copyright>Copyright 2019 - 2020 (c) Shady Nagy. All rights reserved.</Copyright>
@@ -23,7 +23,7 @@
     <PackageProjectUrl>https://github.com/ShadyNagy/Blazor.JavaScriptUtilities</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/ShadyNagy/Blazor.JavaScriptUtilities</RepositoryUrl>
-    <PackageTags>Blazor,JavaScript,Utilities;Razor;Components;ASP.NET Core;CSharp;Web;LocalSotage;Local Storage;local storage;session storage;Sesssion Storage;SessionStorage;Scrollbar;cookie;cookies;Cookie;Cookies;scrollbar;scroll;scroll move;scroll top;scroll bottom</PackageTags>
+    <PackageTags>Blazor,JavaScript,Utilities;Razor;Components;ASP.NET Core;CSharp;Web;LocalSotage;Local Storage;local storage;session storage;Sesssion Storage;SessionStorage;Scrollbar;cookie;cookies;Cookie;Cookies;scrollbar;scroll;scroll move;scroll top;scroll bottom;Alert;Prompt;Confirm</PackageTags>
     <PackageIcon>icon.png</PackageIcon>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <IncludeSymbols>true</IncludeSymbols>

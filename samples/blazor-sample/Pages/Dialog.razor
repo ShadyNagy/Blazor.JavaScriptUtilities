@@ -1,0 +1,47 @@
+﻿@page "/dialog"
+@using System.Net
+
+@inject IBlazorDialog BlazorDialog
+
+<div class="row">
+    <label class="col-2"> Message </label>
+    <input class="col-10" type="text" @bind="Message" />
+</div>
+
+<div class="row">
+    <label class="col-2"> Default </label>
+    <input class="col-10" type="text" @bind="Default" />
+</div>
+<br />
+<div class="row">
+    <button class="btn btn-primary" @onclick="ShowAlert">Show Alert</button>
+    <button class="btn btn-primary" @onclick="ShowPrompt">Show Prompt</button>
+    <button class="btn btn-primary" @onclick="ShowConfirm">Show Confirm</button>
+</div>
+<br />
+<div class="row">
+    <label class="col-2"> Result </label>
+    <input class="col-10" type="text" @bind="Result" />
+</div>
+
+@code
+{
+    private string Message { get; set; } = "Hello All";
+    private string Default { get; set; } = "Hi";
+    private string Result { get; set; } = string.Empty;
+
+    private async Task ShowAlert()
+    {
+        Result = (await BlazorDialog.ShowAlertAsync(Message)).ToString();
+    }
+
+    private async Task ShowPrompt()
+    {
+        Result = await BlazorDialog.ShowPromptAsync(Message, Default);
+    }
+
+    private async Task ShowConfirm()
+    {
+        Result = (await BlazorDialog.ShowConfirmAsync(Message)).ToString();
+    }
+}

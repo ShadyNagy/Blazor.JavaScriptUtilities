@@ -64,5 +64,12 @@ namespace ShadyNagy.Blazor.JavaScriptUtilities.Constants
         {
             internal static string DownloadFromUrl => "downloadFromUrl";
         }
+
+        internal static class Dialog
+        {
+            internal static string ShowAlert => "showAlert";
+            internal static string ShowPrompt => "showPrompt";
+            internal static string ShowConfirm => "showConfirm";
+        }
     }
 }
