@@ -191,9 +191,9 @@ Please checkout the [sample projects](https://github.com/ShadyNagy/Blazor.JavaSc
 
 | Function | Description |
 | --- | --- |
-| Task ShowAlertAsync(string message) | **Show Alert** with message *(Async)* |
-| Task ShowConfirmAsync(string message) | **Show Confirm** with message and return true if click ok *(Async)* |
-| Task ShowPromptAsync(string message, string defaultResponse) | **Show Prompt** with message and return user input *(Async)* |
+| Task<bool> ShowAlertAsync(string message) | **Show Alert** with message *(Async)* |
+| Task<string> ShowConfirmAsync(string message) | **Show Confirm** with message and return true if click ok *(Async)* |
+| Task<bool> ShowPromptAsync(string message, string defaultResponse) | **Show Prompt** with message and return user input *(Async)* |
 
 ## Scrollbar Controller Functions
 
