@@ -43,6 +43,10 @@ Utilities by JavaScript for Blazor
 - Cookie Read
 - Cookie Delete 
 
+- Alert
+- Prompt
+- Confirm
+
 
 ...... and more coming.
 
@@ -147,6 +151,7 @@ Please checkout the [sample projects](https://github.com/ShadyNagy/Blazor.JavaSc
 | AddBlazorScrollController() | **Register** scrollbar controller service only |
 | AddBlazorLocalStorage() | **Register** local storage service only |
 | AddBlazorSessionStorage() | **Register** session storage service only |
+| AddBlazorDialog() | **Register** alert, prompt and confirm only |
 
 ## Local Storage Functions
 
@@ -181,6 +186,14 @@ Please checkout the [sample projects](https://github.com/ShadyNagy/Blazor.JavaSc
 | Task<string> GetCookieAsync(string name) | **Read** cookie by name *(Async)* |
 | void DeleteCookie(string name) | **Delete** cookie by name *(Sync)* |
 | string GetCookie(string name) | **Read** cookie by name *(Sync)* |
+    
+## Dialgo Functions
+
+| Function | Description |
+| --- | --- |
+| Task ShowAlertAsync(string message) | **Show Alert** with message *(Async)* |
+| Task ShowConfirmAsync(string message) | **Show Confirm** with message and return true if click ok *(Async)* |
+| Task ShowPromptAsync(string message, string defaultResponse) | **Show Prompt** with message and return user input *(Async)* |
 
 ## Scrollbar Controller Functions
 
@@ -240,4 +253,5 @@ Please checkout the [sample projects](https://github.com/ShadyNagy/Blazor.JavaSc
 | cookie.js | If **cookie Javascript** functions are used |
 | scroll-controller.js | If **scrollbar controller Javascript** functions are used |
 | storage.js | If **local/session storage Javascript** functions are used |
+| dialog.js | If **alert, prompt and confirm** functions are used |
 
