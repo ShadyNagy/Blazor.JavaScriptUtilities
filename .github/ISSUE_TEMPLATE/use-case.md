@@ -1,6 +1,6 @@
 ---
 name: Use Case
-about: Sample use case for an ASPX page that should be supported
+about: Sample use case for an Javascript function that should be supported
 title: 'Use Case:'
 labels: 'use case'
 assignees: ''
@@ -11,6 +11,7 @@ assignees: ''
 
 ### Provide some sample code to illustrate
 
-```html
-<Sample Code Here />
+```javascript
+sampleFunction() {
+}
 ```
